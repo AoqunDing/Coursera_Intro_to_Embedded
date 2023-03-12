@@ -37,7 +37,21 @@ void main() {
   /* Other Variable Declarations Go Here */
   int median, mean, maximum, minimum;
   /* Statistics and Printing Functions Go Here */
-
+	
+	printf("The initial array is: ");
+	print_array(test, SIZE);
+	
+	sort_array(test, SIZE);
+	
+	printf("Array after bubble sort is: ");
+	print_array(test, SIZE);
+	
+	median = find_median(test, SIZE);
+	mean = find_mean(test, SIZE);
+	maximum = find_maximum(test, SIZE);
+	minimum = find_minimum(test, SIZE);
+	
+	print_statistics(minimum, maximum, mean, median);
 	
 }
 
@@ -45,30 +59,88 @@ void main() {
 
 void print_statistics(int minimum, int maximum, int mean, int median){
 	
+	printf("The minimum value of the array is %d \n", minimum);
+	printf("The maximum value of the array is %d \n", maximum);
+	printf("The mean value of the array is %d \n", mean);
+	printf("The median value of the array is %d \n", median);
+	
 }
 
 void print_array(unsigned char arr[], int length){
-
+	for(int i = 0; i < length; i++){
+		printf("%d, ", arr[i]);
+	}
+	
+	printf("\n");
 }
 
 int find_median(unsigned char arr[], int length){
-
+	
+	int mid = length / 2;
+	
+	if (length % 2 == 0){
+		
+		return (arr[mid - 1] + arr[mid]) / 2;
+	
+	} else{
+		
+		return arr[mid];
+	
+	}
 }
 
 int find_mean(unsigned char arr[], int length){
-
+	
+	int mean = 0;
+	
+	for (int i = 0; i < length; i++){
+		mean += arr[i];
+	}
+	
+	mean /= length;
+	
+	return mean;
 }
 
 int find_maximum(unsigned char arr[], int length){
 	
+	int max = arr[0];
+	
+	for (int i = 1; i < length; i++){
+		if(arr[i] > max){
+			max = arr[i];
+		}
+	}
+	
+	return max;
 }
 
 int find_minimum(unsigned char arr[], int length){
 	
+	int min = arr[0];
+	
+	for (int i = 1; i < length; i++){
+		if(arr[i] < min){
+			min = arr[i];
+		}
+	}
+	
+	return min;
 }
 
 void sort_array(unsigned char arr[], int length){
 	
+	int temp;
+	
+	for (int i = 0; i < length; i++){
+		for (int j = i + 1; j < length; j++){
+			if (arr[i] < arr[j]){
+				temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}		
+		}	
+	}
 }
 
 
