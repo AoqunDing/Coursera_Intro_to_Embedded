@@ -8,18 +8,17 @@
  * misuse of this material. 
  *
  *****************************************************************************/
+ 
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * File: stats.c
  *
- * <Add Extended Description Here>
+ * Author Aoqun Ding
+ * Date: March 2023
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
- *
+ * Description: A program that can analyze an array of unsigned char data
+ * 		          items and report analytics on the maximum, minimum, mean
+ *							and meadian of the data set.
  */
-
-
 
 #include <stdio.h>
 #include "stats.h"
@@ -36,8 +35,42 @@ void main() {
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
   /* Other Variable Declarations Go Here */
+  int median, mean, maximum, minimum;
   /* Statistics and Printing Functions Go Here */
 
+	
 }
 
 /* Add other Implementation File Code Here */
+
+void print_statistics(int minimum, int maximum, int mean, int median){
+	
+}
+
+void print_array(unsigned char arr[], int length){
+
+}
+
+int find_median(unsigned char arr[], int length){
+
+}
+
+int find_mean(unsigned char arr[], int length){
+
+}
+
+int find_maximum(unsigned char arr[], int length){
+	
+}
+
+int find_minimum(unsigned char arr[], int length){
+	
+}
+
+void sort_array(unsigned char arr[], int length){
+	
+}
+
+
+
+
